@@ -5,7 +5,7 @@
 namespace FilmReview.WebApi.Migrations
 {
     /// <inheritdoc />
-    public partial class Film1 : Migration
+    public partial class Review1 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

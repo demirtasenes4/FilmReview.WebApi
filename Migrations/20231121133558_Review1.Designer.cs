@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FilmReview.WebApi.Migrations
 {
     [DbContext(typeof(FilmReviewDbContext))]
-    [Migration("20231118170613_Film1")]
-    partial class Film1
+    [Migration("20231121133558_Review1")]
+    partial class Review1
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
