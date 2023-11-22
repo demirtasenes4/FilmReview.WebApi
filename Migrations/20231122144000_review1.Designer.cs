@@ -4,6 +4,7 @@ using FilmReview.WebApi.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FilmReview.WebApi.Migrations
 {
     [DbContext(typeof(FilmReviewDbContext))]
-    partial class FilmReviewDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231122144000_review1")]
+    partial class review1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -46,9 +49,6 @@ namespace FilmReview.WebApi.Migrations
 
                     b.Property<int>("Rate")
                         .HasColumnType("int");
-
-                    b.Property<DateOnly>("ReleaseDate")
-                        .HasColumnType("date");
 
                     b.HasKey("Id");
 
