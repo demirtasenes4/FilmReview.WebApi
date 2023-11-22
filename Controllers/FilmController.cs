@@ -2,7 +2,6 @@
 using FilmReview.WebApi.Context;
 using FilmReview.WebApi.Models;
 using Microsoft.VisualBasic;
-using System.Diagnostics.CodeAnalysis;
 
 namespace FilmReview.WebApi.Controllers;
 
@@ -19,7 +18,7 @@ public class FilmController : ControllerBase
     [HttpPost]
     public IActionResult CreateFilm(FilmDto request)
     {
-        if (_context.Films.Where(f => f == request).FirstOrDefault() is not null)
+        if (_context.Films.Where(f => f.Name == request.Name).Where(f => f.Director == request.Director).Where(f => f.ReleaseDate == request.ReleaseDate).FirstOrDefault() is not null)
         {
             return BadRequest(new { Message = "This Film is already exist!" });
         }
