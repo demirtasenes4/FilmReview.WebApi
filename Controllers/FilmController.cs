@@ -20,7 +20,7 @@ public class FilmController : ControllerBase
     {
         if (_context.Films.Where(f => f.Name == request.Name).Where(f => f.Director == request.Director).Where(f => f.ReleaseDate == request.ReleaseDate).FirstOrDefault() is not null)
         {
-            return BadRequest(new { Message = "This Film is already exist!" });
+            return BadRequest(new { Message = "This Film is already exist!"});
         }
 
         Film film = new();
